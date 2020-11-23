@@ -1,4 +1,4 @@
-import { urlencoded } from "body-parser";
+import { json, urlencoded } from "body-parser";
 import * as express from "express";
 import * as cors from "cors";
 import { Pool } from "query-builder-mysql";
@@ -10,7 +10,7 @@ import { createServer as https } from 'https';
 
 const app = express();
 const consoleDev = process.argv.includes("--console");
-
+app.use(josn());
 app.use(urlencoded({ extended: true }));
 app.use(cors());
 let test: Pool;
