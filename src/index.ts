@@ -10,7 +10,7 @@ import { createServer as https } from 'https';
 
 const app = express();
 const consoleDev = process.argv.includes("--console");
-app.use(josn());
+app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(cors());
 let test: Pool;
